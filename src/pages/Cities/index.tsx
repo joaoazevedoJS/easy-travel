@@ -18,7 +18,7 @@ const Cities: FC = () => {
   const [isActiveAssistant, setIsActiveAssistant] = useState(true);
 
   const handleChangePage = useCallback(() => {
-    history.push('/hotels');
+    history.push('/calendar');
   }, [history]);
 
   return (
@@ -49,7 +49,7 @@ const Cities: FC = () => {
 
           <div className="buttons">
             <ButtonPrimary onClick={handleChangePage}>
-              Escolher esse hotel
+              Escolher essa cidade
             </ButtonPrimary>
 
             <FiChevronRight size={64} />
