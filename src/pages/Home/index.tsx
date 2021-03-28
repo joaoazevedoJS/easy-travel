@@ -82,7 +82,7 @@ const Home: FC = () => {
 
       {isActiveAssistant && (
         <Assistant
-          page="hotels"
+          page="cities"
           avatar="padrao"
           avatarSpeak={[
             'Olá, me chamo Henrique, sou o assistente virtual da Easy Travel.',

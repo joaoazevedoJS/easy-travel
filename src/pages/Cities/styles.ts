@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-import Hotel from '../../assets/img/hotel.jpg';
+import Background from '../../assets/img/background-paris.jpg';
 
 export const Container = styled.div`
   min-height: 100vh;
   width: 100%;
 
-  background: url(${Hotel}) no-repeat center center fixed;
+  background: url(${Background}) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -79,58 +79,33 @@ export const Content = styled.div`
       }
     }
 
-    div.photos {
-      margin-top: 40px;
+    div.recomedation {
+      margin-top: 80px;
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 32px;
 
       div {
+        height: 187px;
         display: flex;
+        align-items: center;
+        justify-content: center;
 
-        margin-bottom: 8px;
+        position: relative;
+        padding: 32px 16px 16px 16px;
 
-        div {
-          width: 12px;
-          height: 12px;
-          background: #e1dee3;
-          border-radius: 50%;
-          cursor: pointer;
-          position: relative;
+        font-family: Mukta;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 150%;
 
-          transition: background-color 0.4s;
-        }
+        background: var(--white);
 
-        div:hover {
-          background: linear-gradient(
-            220.94deg,
-            #bb71d2 14.43%,
-            #9142a8 85.28%
-          );
-          opacity: 0.3;
-        }
+        color: var(--gray-1);
 
-        div + div {
-          margin-left: 24px;
-        }
-
-        div.active {
-          background: linear-gradient(
-            220.94deg,
-            #bb71d2 14.43%,
-            #9142a8 85.28%
-          );
-        }
-      }
-
-      section {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 32px;
-      }
-
-      img {
         box-shadow: 0px 84px 211px rgba(33, 33, 33, 0.11),
           0px 38.8357px 97.5517px rgba(33, 33, 33, 0.0815843),
           0px 22.2209px 55.8169px rgba(33, 33, 33, 0.0689459),
@@ -139,10 +114,18 @@ export const Content = styled.div`
           0px 4.52568px 11.3681px rgba(33, 33, 33, 0.0410541),
           0px 1.94647px 4.88934px rgba(33, 33, 33, 0.0284157);
         border-radius: 8px;
+      }
 
-        object-fit: cover;
-        width: 100%;
-        height: 187px;
+      img {
+        width: 125px;
+        height: 125px;
+
+        position: absolute;
+        top: -45px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }

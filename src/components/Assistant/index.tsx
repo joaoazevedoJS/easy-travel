@@ -14,13 +14,19 @@ const Avatars = {
 };
 
 interface AssistantProps {
-  page: string;
+  page?: string;
   avatarSpeak: Array<string>;
   avatar: 'padrao' | 'frances';
   isCancel?: boolean;
+  eventClick?: () => void;
 }
 
-const Assistant: FC<AssistantProps> = ({ avatar, avatarSpeak, page }) => {
+const Assistant: FC<AssistantProps> = ({
+  avatar,
+  avatarSpeak,
+  page,
+  eventClick,
+}) => {
   const history = useHistory();
 
   const { speak, voices } = useSpeechSynthesis();
@@ -51,7 +57,7 @@ const Assistant: FC<AssistantProps> = ({ avatar, avatarSpeak, page }) => {
             <p key={text}>{text}</p>
           ))}
 
-          <button type="button" onClick={handleChangePage}>
+          <button type="button" onClick={eventClick ?? handleChangePage}>
             Continuar
           </button>
         </ContentBox>
