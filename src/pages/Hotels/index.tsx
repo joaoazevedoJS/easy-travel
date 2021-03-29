@@ -1,8 +1,10 @@
-import { FC, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { FiChevronRight, FiDollarSign, FiStar } from 'react-icons/fi';
 
+import { useHistory } from 'react-router-dom';
 import { Goback } from '../../components/Goback';
 import { Tag } from '../../components/Tag';
+import { Assistant } from '../../components/Assistant';
 import { ButtonPrimary } from '../../components/ButtonPrimary';
 
 import Logo from '../../assets/svg/logo.svg';
@@ -12,10 +14,15 @@ import Photo02 from '../../assets/img/hotel-photo-02.jpg';
 import Photo03 from '../../assets/img/hotel-photo-03.jpg';
 
 import { Container, Content } from './styles';
-import { Assistant } from '../../components/Assistant';
 
 const Hotels: FC = () => {
+  const history = useHistory();
+
   const [isActiveAssistant, setIsActiveAssistant] = useState(true);
+
+  const handleChangePage = useCallback(() => {
+    history.push('/totals');
+  }, [history]);
 
   return (
     <Container>
@@ -44,7 +51,9 @@ const Hotels: FC = () => {
           </section>
 
           <div className="buttons">
-            <ButtonPrimary>Escolher esse hotel</ButtonPrimary>
+            <ButtonPrimary onClick={handleChangePage}>
+              Escolher esse hotel
+            </ButtonPrimary>
 
             <FiChevronRight size={64} />
           </div>

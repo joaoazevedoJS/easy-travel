@@ -15,6 +15,7 @@ export const Container = styled.div`
   }
 
   header.main-header {
+    border-radius: 0 0 50px 50px;
     background: #232224;
 
     padding: 32px 0 180px;
